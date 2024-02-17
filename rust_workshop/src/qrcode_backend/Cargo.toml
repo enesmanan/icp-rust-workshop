@@ -1,0 +1,19 @@
+[package]
+name = "qrcode_backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+candid = "0.10"
+ic-cdk = "0.12"
+ic-cdk-timers = "0.6" # Feel free to remove this dependency if you don't need timers
+anyhow = "1.0"
+colorgrad = "0.6"
+qrcode_generator = "4.1"
+image = {version = "0.24", features = ["png"], default-features = false }
+serde = {version = "1.0", features = ["derive"]  }
