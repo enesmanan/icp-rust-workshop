@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "motoko_tutorial_backend": {
+      "main": "src/motoko_tutorial_backend/main.mo",
+      "type": "motoko"
+    },
+    "motoko_tutorial_frontend": {
+      "dependencies": [
+        "motoko_tutorial_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/motoko_tutorial_frontend/src/index.html"
+      },
+      "source": [
+        "src/motoko_tutorial_frontend/assets",
+        "dist/motoko_tutorial_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
