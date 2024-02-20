@@ -1,6 +1,6 @@
 # Internet Computer Rust Workshop
 
-This repo includes the projects developed at the Rust workshop held in cooperation with [Patika.dev](https://academy.patika.dev/tr/@enesmanan) and [ICP.Hub](https://www.risein.com/@enesmanan) Turkey dated 17.02.2024.
+This repo includes the projects developed at the Rust workshop held in cooperation with [Patika.dev](https://academy.patika.dev/tr/@enesmanan) and [ICP.Hub](https://www.risein.com/@enesmanan) Turkey.
 
 ## Projects
 
