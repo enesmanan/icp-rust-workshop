@@ -1,24 +1,29 @@
 # Various IDEs and Editors
-.vscode/
-.idea/
-**/*~
+rust_workshop/.vscode/
+rust_workshop/.idea/
+rust_workshop/**/*~
+motoko_workshop/.vscode/
+motoko_workshop/.idea/
+motoko_workshop/**/*~
 
-# Mac OSX temporary files
-.DS_Store
-**/.DS_Store
 
 # dfx temporary files
-.dfx/
+rust_workshop/.dfx/
+motoko_workshop/.dfx/
 
 # generated files
-src/declarations/
+rust_workshop/src/declarations/
+motoko_workshop/src/declarations/
 
 # rust
-target/
+rust_workshop/target/
 
 # frontend code
-node_modules/
-dist/
+rust_workshop/node_modules/
+rust_workshop/dist/
+motoko_workshop/node_modules/
+motoko_workshop/dist/
 
 # environment variables
-.env
+rust_workshop/.env
+motoko_workshop/.env
