@@ -1,6 +1,6 @@
-## To Do Project
+# To Do Project
 
-A simple to-do list app with Motoko language.
+A simple to-do list app with [Motoko](https://internetcomputer.org/docs/current/motoko/main/motoko).
 
 
 ## Requirements
@@ -13,7 +13,7 @@ A simple to-do list app with Motoko language.
 dfx --version
 ```
 
-### install node_module
+### install node_modules
 
 ```bash
 npm install
@@ -31,7 +31,7 @@ cd motoko_workshop
 dfx start --clean
 ```
 
-- Launch the deploy in another terminal:
+- Launch deploy in another terminal:
 
 ```bash
 cd src/motoko_tutorial_backend/
