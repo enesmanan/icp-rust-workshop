@@ -12,6 +12,11 @@ A simple to-do list app with [Motoko](https://internetcomputer.org/docs/current/
 ```bash
 dfx --version
 ```
+### Change Directory
+
+```bash
+cd motoko_workshop
+```
 
 ### install node_modules
 
@@ -19,11 +24,6 @@ dfx --version
 npm install
 ```
 
-### Change Directory
-
-```bash
-cd motoko_workshop
-```
 
 ### Run
 
