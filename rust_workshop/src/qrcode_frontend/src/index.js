@@ -1,19 +1,64 @@
 import { qrcode_backend } from "../../declarations/qrcode_backend";
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+document.getElementById("generate").onclick = onGenerateButtonClick;
 
-  const name = document.getElementById("name").value.toString();
+async function onGenerateButtonClick(event) {
+  event.preventDefault();
 
-  button.setAttribute("disabled", true);
+  const buttonElement = event.target;
+  const messageElement = document.getElementById("message");
+  const imageElement = document.getElementById("qrcode");
+  const linkElement = document.getElementById("download");
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await qrcode_backend.greet(name);
+  buttonElement.disabled = true;
+  messageElement.innerText = "Working...";
+  imageElement.src = "";
+  imageElement.width = 0;
+  linkElement.href = "";
 
-  button.removeAttribute("disabled");
+  try {
+    const text = document.getElementById("text").value.toString();
+    const options = {
+      add_logo: document.getElementById("logo").checked,
+      add_gradient: document.getElementById("gradient").checked,
+      add_transparency: [document.getElementById("transparent").checked],
+    }
 
-  document.getElementById("greeting").innerText = greeting;
+    let result;
+    if (document.getElementById("consensus").checked) {
+      result = await qrcode_backend.qrcode(text, options);
+    } else {
+      result = await qrcode_backend.qrcode_query(text, options);
+    }
 
+    if ("Err" in result) {
+      throw result.Err;
+    }
+
+    const image = result.Image;
+    const blob = new Blob([image], { type: "image/png" });
+    const url = await convertToDataUrl(blob);
+
+    messageElement.innerText = "Here you go:";
+    imageElement.src = url;
+    imageElement.width = document.getElementById("text").clientWidth;
+    linkElement.href = url;
+  } catch (err) {
+    messageElement.innerText = "Failed to generate QR code: " + err.toString();
+  }
+
+  buttonElement.disabled = false;
   return false;
-});
+
+}
+
+
+function convertToDataUrl(blob) {
+  return new Promise((resolve, _) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(blob);
+    fileReader.onloadend = function () {
+      resolve(fileReader.result);
+    }
+  });
+}

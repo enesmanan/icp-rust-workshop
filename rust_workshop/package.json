@@ -17,9 +17,9 @@
     "generate": "dfx generate qrcode_backend"
   },
   "dependencies": {
-    "@dfinity/agent": "^1.0.0",
-    "@dfinity/candid": "^1.0.0",
-    "@dfinity/principal": "^1.0.0"
+    "@dfinity/agent": "^0.18.1",
+    "@dfinity/candid": "^0.18.1",
+    "@dfinity/principal": "^0.18.1"
   },
   "devDependencies": {
     "assert": "2.0.0",
@@ -37,8 +37,7 @@
     "webpack-dev-server": "^4.8.1"
   },
   "engines": {
-    "node": "^12 || ^14 || ^16 || >=17",
-    "npm": "^7.17 || >=8"
+    "node": "^12 || ^14 || ^16 || ^18 || ^21"
   },
   "browserslist": [
     "last 2 chrome version",

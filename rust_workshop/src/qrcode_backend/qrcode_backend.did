@@ -1,16 +1,16 @@
 type Options = record {
-    add_logo: bool;
-    add_gradient: bool;
-    add_transparency: opt bool;
+  add_logo: bool;
+  add_gradient: bool;
+  add_transparency: opt bool;
 };
 
 type QrError = record {
-    message: text;
+  message: text;
 };
 
 type QrResult = variant {
-    Image: blob;
-    Err: QrError;
+  Image: blob;
+  Err: QrError;
 }
 
 service : {
