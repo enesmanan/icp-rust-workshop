@@ -7,7 +7,7 @@ A simple to-do list app with [Motoko](https://internetcomputer.org/docs/current/
 
 ### Environment
 
-- Ensure that your dfx version is set to `0.16.1`:
+- Ensure that your dfx version is set to `0.16.1` (node.js version `12.22.9`):
 
 ```bash
 dfx --version
